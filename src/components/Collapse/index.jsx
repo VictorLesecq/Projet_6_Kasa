@@ -11,7 +11,7 @@ const CollapseContainer = styled.div`
 `
 const Container = styled.div`
      display: grid;
-     grid-template-rows: ${({ isOpen }) => (isOpen ? '1fr' : '0fr')};
+     grid-template-rows: ${({ $isOpen }) => ($isOpen ? '1fr' : '0fr')};
      transition: grid-template-rows 300ms ease-in-out;
      width: 100%;
 `
@@ -35,7 +35,7 @@ const CollapseTitle = styled.div`
      }
      & img {
           vertical-align: middle;
-          transform: rotate(${({ isOpen }) => (isOpen ? '-180deg' : null)});
+          transform: rotate(${({ $isOpen }) => ($isOpen ? '-180deg' : null)});
           transition: transform 300ms ease-in-out;
      }
 `
@@ -46,7 +46,7 @@ const DescriptionContainer = styled.div`
      border-radius: 10px;
      overflow: hidden;
      padding-inline: 20px;
-     padding-block: ${({ isOpen }) => (isOpen ? '75px 20px' : '0px')};
+     padding-block: ${({ $isOpen }) => ($isOpen ? '75px 20px' : '0px')};
      transition: padding-block 300ms ease-in-out;
 `
 
@@ -55,14 +55,14 @@ function Collapse(props) {
      const [isOpen, setIsOpen] = useState(false)
      return (
           <CollapseContainer>
-               <CollapseTitle isOpen={isOpen}>
+               <CollapseTitle $isOpen={isOpen}>
                     {title}
                     <button onClick={() => setIsOpen(!isOpen)}>
                          <img src={arrow} alt="flèche" />
                     </button>
                </CollapseTitle>
-               <Container isOpen={isOpen}>
-                    <DescriptionContainer isOpen={isOpen}>
+               <Container $isOpen={isOpen}>
+                    <DescriptionContainer $isOpen={isOpen}>
                          {children}
                     </DescriptionContainer>
                </Container>

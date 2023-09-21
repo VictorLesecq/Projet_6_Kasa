@@ -8,7 +8,7 @@ const HeroSectionContainer = styled.div`
      margin: auto;
      padding: 77px;
      border-radius: 25px;
-     background-image: url(${(url) => url.url});
+     background-image: url(${(props) => props.$url});
      background-position: center;
      object-fit: cover;
      margin-top: 50px;
@@ -53,9 +53,9 @@ const HeroSectionContainer = styled.div`
 `
 
 function HeroSection(props) {
-     const { url } = props
+     // const { url } = props
      return (
-          <HeroSectionContainer url={url}>
+          <HeroSectionContainer $url={props.url}>
                {props.children ? props.children : <div></div>}
           </HeroSectionContainer>
      )

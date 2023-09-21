@@ -27,12 +27,12 @@ const CarouselButton = styled.button`
     border:none;
     cursor: pointer;
     z-index: 10;
-    ${({ position }) =>
-         position === 'right' ? 'right : 25px' : 'left : 25px'};
+    ${({ $position }) =>
+         $position === 'right' ? 'right : 25px' : 'left : 25px'};
 
     &:hover{
-        ${({ position }) =>
-             position === 'right' ? 'right : 20px' : 'left : 20px'};
+        ${({ $position }) =>
+             $position === 'right' ? 'right : 20px' : 'left : 20px'};
     }
 }`
 
@@ -163,7 +163,7 @@ function Carrousel(props) {
                               <img src={VectorLeft} alt="" />
                          </CarouselButton>
                          <CarouselButton
-                              position="right"
+                              $position="right"
                               onClick={() => actionHandler('next')}
                          >
                               <img src={VectorRight} alt="" />
