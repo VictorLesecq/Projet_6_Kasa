@@ -1,0 +1,80 @@
+@import '../../utils/style/Variables';
+
+.Accomodation_Resume {
+     display: flex;
+     justify-content: space-between;
+     color: $primary;
+     margin-top: 30px;
+
+     @media (max-width: $small) {
+          flex-direction: column;
+     }
+
+     & h1 {
+          font-size: 2.25rem;
+          font-weight: 500;
+     }
+     & h2 {
+          font-size: 1.125rem;
+          margin-bottom: 20px;
+          font-weight: 500;
+     }
+     & span {
+          background: $primary;
+          border-radius: 10px;
+          padding-inline: 40px;
+          padding-block: 2px;
+          font-size: 0.875rem;
+          color: $light;
+     }
+}
+.Tags_Container {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+}
+
+.Owner_Info {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+     @media (max-width: $small) {
+          flex-direction: row;
+          justify-content: space-between;
+          margin-block: 10px;
+     }
+}
+.Owner_Picture {
+     width: 64px;
+     aspect-ratio: 1;
+     border-radius: 50%;
+}
+.Accomodation_Details {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 75px;
+     margin-bottom: 50px;
+
+     @media (max-width: $small) {
+          grid-template-columns: 1fr;
+          gap: 0;
+     }
+
+     & ul {
+          list-style-type: none;
+     }
+}
+
+.Owner_IdContainer {
+     display: flex;
+     justify-content: right;
+     align-items: center;
+     gap: 10px;
+     margin-bottom: 20px;
+
+     @media (max-width: $small) {
+          margin-bottom: 0px;
+          order: 1;
+     }
+}

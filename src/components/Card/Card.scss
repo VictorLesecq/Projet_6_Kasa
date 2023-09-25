@@ -1,0 +1,33 @@
+@import '../../utils/style/Variables';
+
+.Card_Container {
+     border-radius: 10px;
+     position: relative;
+     height: 100%;
+
+     img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+     }
+
+     h2 {
+          position: absolute;
+          font-size: 1.125rem;
+          color: $light;
+          font-weight: normal;
+          bottom: 20px;
+          margin-inline: 20px;
+          z-index: 2;
+     }
+     &:after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          background: linear-gradient(transparent, $dark);
+          opacity: 0.5;
+          border-radius: 10px;
+     }
+}

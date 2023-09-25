@@ -1,0 +1,21 @@
+@import '../../utils/style/Variables';
+
+footer {
+     background-color: $dark;
+     color: $light;
+}
+
+.Footer_Content {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding-block: 50px;
+     max-width: 50vw;
+     margin: auto;
+
+     & p {
+          padding-top: 30px;
+          text-align: center;
+     }
+}

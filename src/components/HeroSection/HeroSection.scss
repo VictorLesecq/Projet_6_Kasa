@@ -1,0 +1,51 @@
+@import '../../utils/style/Variables';
+
+.HeroSection_Container {
+     position: relative;
+     width: 100%;
+     margin: auto;
+     padding: 77px;
+     border-radius: 25px;
+     margin-top: 50px;
+     display: flex;
+     flex-wrap: wrap;
+     background-position: center;
+     object-fit: cover;
+     background-repeat: no-repeat;
+
+     &:before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          border-radius: 25px;
+          background: #000000;
+          opacity: 0.3;
+     }
+
+     h1 {
+          position: relative;
+          z-index: 2;
+          color: $light;
+          text-align: center;
+          width: 100%;
+          font-size: 3em;
+     }
+
+     div {
+          height: 60px;
+     }
+
+     @media (max-width: $small) {
+          padding: 30px;
+
+          span {
+               display: block;
+          }
+
+          h1 {
+               font-size: 1.5em;
+               text-align: start;
+          }
+     }
+}

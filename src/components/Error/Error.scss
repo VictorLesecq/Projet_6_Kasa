@@ -1,0 +1,25 @@
+@import '../../utils/style/Variables';
+
+.Error_Container {
+     display: grid;
+     grid-template-rows: 1fr;
+     height: auto;
+     text-align: center;
+     color: $primary;
+
+     & h1 {
+          padding-top: 40px;
+          font-size: 150px;
+          font-weight: 700;
+     }
+
+     & h2 {
+          padding-top: 30px;
+     }
+
+     & a {
+          padding-block: 50px;
+          color: $primary;
+          font-size: 0.75rem;
+     }
+}

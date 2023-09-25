@@ -1,6 +1,6 @@
-import styled from 'styled-components'
 import VectorRight from '../../assets/VectorRight.png'
 import VectorLeft from '../../assets/VectorLeft.png'
+import './Carrousel.scss'
 import {
      useMemo,
      useEffect,
@@ -9,50 +9,6 @@ import {
      useRef,
      useCallback,
 } from 'react'
-
-const CarrouselContainer = styled.div`
-     width: 100%;
-     height: 60vh;
-     position: relative;
-     background-color: #feee;
-     margin-top: 50px;
-     border-radius: 25px;
-     overflow: hidden;
-`
-const CarouselButton = styled.button`
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background:transparent;
-    border:none;
-    cursor: pointer;
-    z-index: 10;
-    ${({ $position }) =>
-         $position === 'right' ? 'right : 25px' : 'left : 25px'};
-
-    &:hover{
-        ${({ $position }) =>
-             $position === 'right' ? 'right : 20px' : 'left : 20px'};
-    }
-}`
-
-const Container = styled.ul`
-     width: 100%;
-     height: 100%;
-     display: flex;
-     list-style: none;
-     transform: translateX(${({ translate }) => `-${translate}px`});
-     & li {
-          height: 100%;
-          width: 100%;
-          flex-shrink: 0;
-     }
-`
-const CarouselPicture = styled.img`
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-`
 
 function Carrousel(props) {
      const pictures = props.pictures
@@ -119,20 +75,36 @@ function Carrousel(props) {
           if (pictures.length > 1) {
                let items = pictures.map((url, index) => (
                     <li key={index}>
-                         <CarouselPicture src={url} alt="logement" />
+                         <img
+                              className="CarouselPicture"
+                              src={url}
+                              alt="logement"
+                         />
+                         <span className="NumSlide">
+                              {index + 1}/{pictures.length}
+                         </span>
                     </li>
                ))
 
                return [
                     <li key={pictures.length + 1}>
-                         <CarouselPicture
+                         <img
+                              className="CarouselPicture"
                               src={pictures[pictures.length - 1]}
                               alt="logement"
                          />
+                         <span className="NumSlide">
+                              {pictures.length}/{pictures.length}
+                         </span>
                     </li>,
                     ...items,
                     <li key={pictures.length + 2}>
-                         <CarouselPicture src={pictures[0]} alt="logement" />
+                         <img
+                              className="CarouselPicture"
+                              src={pictures[0]}
+                              alt="logement"
+                         />
+                         <span className="NumSlide">1/{pictures.length}</span>
                     </li>,
                ]
           }
@@ -140,7 +112,11 @@ function Carrousel(props) {
           setCurrent(0)
           return (
                <li>
-                    <CarouselPicture src={pictures[0]} alt="logement" />
+                    <img
+                         className="CarouselPicture"
+                         src={pictures[0]}
+                         alt="logement"
+                    />
                </li>
           )
      }, [pictures])
@@ -152,25 +128,32 @@ function Carrousel(props) {
      }, [])
 
      return (
-          <CarrouselContainer>
-               <Container ref={containerRef} translate={translateX}>
+          <div className="Carrousel">
+               <ul
+                    className="Carrousel_Container"
+                    ref={containerRef}
+                    style={{ '--translateX': `-${translateX}px` }}
+               >
                     {slides}
-               </Container>
+               </ul>
 
                {!onePic ? (
                     <div>
-                         <CarouselButton onClick={() => actionHandler('prev')}>
+                         <button
+                              className="Carousel_btn btn_left"
+                              onClick={() => actionHandler('prev')}
+                         >
                               <img src={VectorLeft} alt="" />
-                         </CarouselButton>
-                         <CarouselButton
-                              $position="right"
+                         </button>
+                         <button
+                              className="Carousel_btn btn_right"
                               onClick={() => actionHandler('next')}
                          >
                               <img src={VectorRight} alt="" />
-                         </CarouselButton>
+                         </button>
                     </div>
                ) : null}
-          </CarrouselContainer>
+          </div>
      )
 }
 

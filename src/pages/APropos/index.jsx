@@ -1,22 +1,14 @@
-import styled from 'styled-components'
 import HeroSection from '../../components/HeroSection'
 import PictureHeroSection from '../../assets/Image_source-2.jpg'
 import Collapse from '../../components/Collapse'
-
-const Container = styled.div`
-     width: 90%;
-     display: flex;
-     flex-direction: column;
-     margin: auto;
-     margin-block: 25px;
-`
+import './APropos.scss'
 
 function APropos() {
      return (
           <main>
                <HeroSection url={PictureHeroSection}></HeroSection>
 
-               <Container>
+               <div className="APropos_Container">
                     <Collapse title="Fiabilité">
                          <p>
                               Les annonces postées sur Kasa garantissent une
@@ -54,7 +46,7 @@ function APropos() {
                               hôtes.
                          </p>
                     </Collapse>
-               </Container>
+               </div>
           </main>
      )
 }

@@ -1,0 +1,61 @@
+@import '../../utils/style/Variables';
+
+.Collapse_Container {
+     margin-block: 15px;
+     position: relative;
+     min-height: 53px;
+     display: flex;
+}
+
+.Collapse_Content--Container {
+     display: grid;
+     grid-template-rows: 0fr;
+     transition: grid-template-rows 300ms ease-in-out;
+     width: 100%;
+}
+
+.Collapse_Title {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     color: $light;
+     background: $primary;
+     border-radius: 10px;
+     padding: 10px;
+     position: absolute;
+     width: 100%;
+}
+button {
+     background: transparent;
+     border: none;
+}
+button:hover {
+     cursor: pointer;
+}
+img {
+     vertical-align: middle;
+     transition: transform 300ms ease-in-out;
+}
+
+.Collapse_Content--Content {
+     background-color: $grey;
+     color: $primary;
+     border-bottom: 5px;
+     border-radius: 10px;
+     overflow: hidden;
+     padding-inline: 20px;
+     transition: padding-block 300ms ease-in-out;
+     padding-block: 0px;
+}
+
+.Collapse_Container--Open {
+     & .Collapse_Content--Container {
+          grid-template-rows: 1fr;
+     }
+     & img {
+          transform: rotate(-180deg);
+     }
+     & .Collapse_Content--Content {
+          padding-block: 75px 20px;
+     }
+}

@@ -1,0 +1,33 @@
+@import '../../utils/style/Variables';
+
+header {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     margin-top: 45px;
+
+     @media (max-width: $small) {
+          & img {
+               height: 46px;
+          }
+     }
+}
+
+nav {
+     & ul {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          list-style-type: none;
+     }
+     & li {
+          margin-left: 50px;
+     }
+     & a {
+          color: $primary;
+          text-decoration: none;
+     }
+     & a:hover {
+          text-decoration: underline;
+     }
+}
