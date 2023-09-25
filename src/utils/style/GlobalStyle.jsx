@@ -11,7 +11,7 @@ const StyledGlobalStyle = createGlobalStyle`
     header, main{
         max-width:1240px;
         min-width: 375px;
-        margin:auto;
+        margin-inline:auto;
         width:90%;
     }
 
