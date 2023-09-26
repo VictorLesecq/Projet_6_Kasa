@@ -121,6 +121,16 @@ function Carrousel(props) {
           )
      }, [pictures])
 
+     useEffect(() => {
+          const handleWindowResize = () => {
+               setTranslateX(containerRef.current.clientWidth * current)
+          }
+          window.addEventListener('resize', handleWindowResize)
+          return () => {
+               window.removeEventListener('resize', handleWindowResize)
+          }
+     }, [current])
+
      //Position first element, this will rendre only ones
      useLayoutEffect(() => {
           setTranslateX(containerRef.current.clientWidth * current)
