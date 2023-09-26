@@ -2,7 +2,10 @@
 
 .Error_Container {
      display: grid;
-     grid-template-rows: 1fr;
+     grid-template-rows: 1fr auto 1fr;
+     flex-grow: 1;
+}
+.Error_Content {
      height: auto;
      text-align: center;
      color: $primary;
@@ -17,8 +20,11 @@
           padding-top: 30px;
      }
 
-     & a {
+     & p {
           padding-block: 50px;
+     }
+
+     & a {
           color: $primary;
           font-size: 0.75rem;
      }

@@ -8,6 +8,12 @@ const StyledGlobalStyle = createGlobalStyle`
      box-sizing: border-box;
     }
 
+    #root{
+        display:flex;
+        flex-direction:column;
+        min-height:100vh;
+    }
+
     header, main{
         max-width:1240px;
         min-width: 375px;
