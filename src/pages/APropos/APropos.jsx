@@ -1,6 +1,6 @@
-import HeroSection from '../../components/HeroSection'
+import HeroSection from '../../components/HeroSection/HeroSection'
 import PictureHeroSection from '../../assets/Image_source-2.jpg'
-import Collapse from '../../components/Collapse'
+import Collapse from '../../components/Collapse/Collapse'
 import './APropos.scss'
 
 function APropos() {

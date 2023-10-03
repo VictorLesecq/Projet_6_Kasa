@@ -1,8 +1,8 @@
 import { DataKasa } from '../../assets/data'
 import { Link } from 'react-router-dom'
 import PictureHeroSection from '../../assets/Image_source-1.jpg'
-import Card from '../../components/Card'
-import HeroSection from '../../components/HeroSection'
+import Card from '../../components/Card/Card'
+import HeroSection from '../../components/HeroSection/HeroSection'
 import './Home.scss'
 
 function Home() {

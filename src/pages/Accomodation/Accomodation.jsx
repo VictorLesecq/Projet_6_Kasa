@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom'
 import { DataKasa } from '../../assets/data'
-import Carrousel from '../../components/Carrousel'
-import Collapse from '../../components/Collapse'
+import Carrousel from '../../components/Carrousel/Carrousel'
+import Collapse from '../../components/Collapse/Collapse'
 import StarActive from '../../assets/star-active 1.png'
 import StarInactive from '../../assets/star-inactive 1.png'
 

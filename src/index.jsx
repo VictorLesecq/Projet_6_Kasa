@@ -6,13 +6,13 @@ import {
      Route,
      useLocation,
 } from 'react-router-dom'
-import Home from './pages/Home'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Accomodation from './pages/Accomodation'
+import Home from './pages/Home/Home'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import Accomodation from './pages/Accomodation/Accomodation'
 import GlobalStyle from './utils/style/GlobalStyle'
-import APropos from './pages/APropos'
-import Error from './components/Error'
+import APropos from './pages/APropos/APropos'
+import Error from './components/Error/Error'
 
 function ScrollToTop() {
      const { pathname } = useLocation()
